@@ -1,198 +1,230 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laundry Service Order Form</title>
-    <style>
-        * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-}
-.navbar{
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100px;
-    background-color: #ffffff;
-    display: flex;
-    align-items: center;
-    position: fixed;
-    margin-bottom: 10px;
-    padding: 0%;
-  margin: 0%;
-  }
-  #logo
-{
-  margin: 20px;
-  height: 60px;
-  margin-right: 400px;
-}
-a{
-  font-size: 30px;
-  margin: 20px;
-color: black;
-text-decoration: none;
-font-weight: 700;
-}
-.content{
-    margin-top: 100px;
-  }
-a:hover{
-  color:#3ca22c;
-  text-decoration: underline;
-}
-#profile
-{
-  margin-left: 60px;
-  border: none;
-  border-radius: 20px; /* Adjust the value to increase or decrease the curve */
-  padding: 20px 90px; /* Adjust padding as needed */
-  background-color: #3ca22c; /* Green background */
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-}
-  .container7
-  {
-    background-color: #022d1aeb;
-    text-align: right;
-  }
-  
-.container {
-    width: 80%;
-    margin: 50px auto;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-input[type="number"], textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-textarea {
-    resize: vertical;
-}
-
-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #3ca22c;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #2c7a22;
-}
-
-    </style>
-</head>
-<body>
-    <div class="navbar">
-        <img src="images\logo.png" id="logo">
-        
-        <form action="/home" method="get"><a href="/home">Home</a></form>
-        <form action="/about" method="get"><a href="/about">About</a></form>
-        <form action="/service" method="get"><a href="/service">Services</a></form>
-        <form action="/contact" method="get"><a href="/contact">Contact</a></form>
-
-        <form action="/profile" method="get"><button id="profile"  >Profile</button></form>
-        <form action="/ls" method="get"><button id="profile" >Login/Signup</button></form>
-     
-    </div>
-<div class="container">
-    <br><br>
-    <h1 style="color:#2c7a22; text-align: center;">Prepare your Order!</h1>
-    <form action="/sumbit-order" method="POST">
-        <div class="form-group">
-            <label for="special_instructions">Name</label>
-            <textarea id="special_instructions" name="name" rows="4" cols="50" placeholder="Name"></textarea>
-        </div>
-        <div class="form-group">
-            <label for="special_instructions">Email</label>
-            <textarea id="special_instructions" name="email" rows="4" cols="50" placeholder="Email"></textarea>
-        </div>
-        <div class="form-group">
-            <label for="shirt">Shirts (Price per piece- 10):</label>
-            <input type="number" id="shirt" name="shirt" min="0" step="1" placeholder="Enter quantity">
-        </div>
-        <div class="form-group">
-            <label for="pants">Pants (Price per piece- 10):</label>
-            <input type="number" id="pants" name="pants" min="0" step="1" placeholder="Enter quantity">
-        </div>
-        <div class="form-group">
-            <label for="socks">Socks (Price per piece- 10):</label>
-            <input type="number" id="dress" name="socks" min="0" step="1" placeholder="Enter quantity">
-        </div>
-        <div class="form-group">
-            <label for="saree">Saree (Price per piece- 30):</label>
-            <input type="number" id="dress" name="saree" min="0" step="1" placeholder="Enter quantity">
-        </div>
-        <div class="form-group">
-            <label for="Jacket">Jacket (Price per piece- 40):</label>
-            <input type="number" id="dress" name="jacket" min="0" step="1" placeholder="Enter quantity">
-        </div>
-        <div class="form-group">
-            <label for="suit">Suit (Price per piece- 50):</label>
-            <input type="number" id="dress" name="suit" min="0" step="1" placeholder="Enter quantity">
-        </div>
-        <div class="form-group">
-            <label for="other">Other (Price per piece- 100):</label>
-            <input type="number" id="dress" name="other" min="0" step="1" placeholder="Enter quantity">
-        </div>
-        <!-- <div class="form-group">
-            <label for="special_instructions">Special Instructions:</label>
-            <textarea id="special_instructions" name="special_instructions" rows="4" cols="50" placeholder="Enter any special instructions"></textarea>
-        </div> -->
-        <button type="submit" >Place Order</button>
-        
-    </form>
-</div>
-<div class="container7">
-    <img src="images/Screenshot 2024-03-28 165716.png">
-  </div>
-<script>
-    function submitOrder() {
-        alert("Order placed successfully!");
+```
+<style>
+    *{
+        box-sizing:border-box;
+        margin:0;
+        padding:0;
     }
-</script>
+
+    body{
+        font-family:Arial,sans-serif;
+        background-color:#f2f2f2;
+    }
+
+   .navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:90px;
+    background:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 40px;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+
+    z-index:1000;
+}
+
+    #logo{
+        height:60px;
+        margin-right:50px;
+    }
+
+    .nav-links{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+    .navbar a{
+        font-size:22px;
+        margin-right:20px;
+        color:black;
+        text-decoration:none;
+        font-weight:700;
+    }
+
+    .navbar a:hover{
+        color:#3ca22c;
+        text-decoration:underline;
+    }
+
+    #profile{
+    border-radius:20px;
+    padding:12px 25px;
+    background-color:#3ca22c;
+    color:white !important;
+}
+
+    .content{
+        margin-top:130px;
+    }
+
+    .container{
+        width:80%;
+        margin:30px auto;
+        background-color:#fff;
+        border-radius:10px;
+        padding:30px;
+        box-shadow:0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1{
+        color:#2c7a22;
+        text-align:center;
+        margin-bottom:30px;
+    }
+
+    .form-group{
+        margin-bottom:20px;
+    }
+
+    label{
+        display:block;
+        font-weight:bold;
+        margin-bottom:5px;
+    }
+
+    input[type="number"]{
+        width:100%;
+        padding:10px;
+        font-size:16px;
+        border:1px solid #ccc;
+        border-radius:5px;
+    }
+
+    button{
+        display:block;
+        width:100%;
+        padding:12px;
+        background-color:#3ca22c;
+        color:#fff;
+        border:none;
+        border-radius:5px;
+        font-size:18px;
+        cursor:pointer;
+        transition:0.3s;
+    }
+
+    button:hover{
+        background-color:#2c7a22;
+    }
+
+    .container7{
+        background-color:#022d1aeb;
+        text-align:right;
+        margin-top:40px;
+    }
+
+    .container7 img{
+        max-width:100%;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<div class="navbar">
+    <img src="/images/logo.png" id="logo">
+    <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/service">Services</a>
+    <a href="/contact">Contact</a>
+    <% if(islogin){ %>
+
+    <a href="/profile">Profile</a>
+
+    <a href="/order">Order</a>
+
+    <a href="/myorders">My Orders</a>
+
+    <% if(role === "admin"){ %>
+        <a href="/admin">Admin</a>
+    <% } %>
+
+    <a href="/logout" id="profile">Logout</a>
+
+<% } else { %>
+
+    <a href="/login" id="profile">
+        Login/Signup
+    </a>
+
+<% } %>
+</div>
+</div>
+<div class="content">
+
+    <div class="container">
+
+        <h1>Prepare Your Order!</h1>
+
+        <form action="/submit-order" method="POST">
+
+            <div class="form-group">
+                <label for="shirt">Shirts (₹10 each)</label>
+                <input type="number" id="shirt" name="shirt" min="0" step="1" value="0">
+            </div>
+
+            <div class="form-group">
+                <label for="pants">Pants (₹10 each)</label>
+                <input type="number" id="pants" name="pants" min="0" step="1" value="0">
+            </div>
+
+            <div class="form-group">
+                <label for="socks">Socks (₹2 each)</label>
+                <input type="number" id="socks" name="socks" min="0" step="1" value="0">
+            </div>
+
+            <div class="form-group">
+                <label for="saree">Sarees (₹12 each)</label>
+                <input type="number" id="saree" name="saree" min="0" step="1" value="0">
+            </div>
+
+            <div class="form-group">
+                <label for="jacket">Jackets (₹15 each)</label>
+                <input type="number" id="jacket" name="jacket" min="0" step="1" value="0">
+            </div>
+
+            <div class="form-group">
+                <label for="suit">Suits (₹15 each)</label>
+                <input type="number" id="suit" name="suit" min="0" step="1" value="0">
+            </div>
+
+            <div class="form-group">
+                <label for="other">Other Clothes (₹8 each)</label>
+                <input type="number" id="other" name="other" min="0" step="1" value="0">
+            </div>
+
+            <button type="submit">Place Order</button>
+
+        </form>
+
+    </div>
+
+    <div class="container7">
+        <img src="/images/Screenshot 2024-03-28 165716.png" alt="Footer Image">
+    </div>
+
+</div>
+```
 
 </body>
 </html>

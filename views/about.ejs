@@ -3,209 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>about us</title>
-   <style>
+    <title>About Us</title>
+    <style>
+
 *{
-  padding: 0%;
-  margin: 0%;
-}
-.navbar{
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100px;
-  background-color: #ffffff;
-  display: flex;
-  align-items: center;
-  position: fixed;
-  margin-bottom: 10px;
-}
-#logo
-{
-  margin: 20px;
-  height: 60px;
-  margin-right: 400px;
-}
-a{
-  font-size: 30px;
-  margin: 20px;
-color: black;
-text-decoration: none;
-font-weight: 700;
-}
-a:hover{
-  color:#3ca22c;
-  text-decoration: underline;
-}
-#profile
-{
-  margin-left: 60px;
-  border: none;
-  border-radius: 20px; /* Adjust the value to increase or decrease the curve */
-  padding: 20px 90px; /* Adjust padding as needed */
-  background-color: #3ca22c; /* Green background */
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-}
-.content{
-  margin-top: 100px;
-}
-#laundary
-{
-  width: 100%;
-  height: 600px;
-  opacity: 0.7;
-}
-.container2 {
-  position: relative;
-  display: inline-block;
-  width: 100%;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
-.text-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
-  text-align: center;
-  border-radius: 10px;
+body{
+    overflow-x:hidden;
+    background:#f8f9fa;
 }
-#order
-{
-  font-size: 60px;
-  border-radius: 20px;
-  padding: 20px 80px;
-  background-color:#3ca22c;
-  color: #ffffff;
+
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:80px;
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 50px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    z-index:1000;
 }
-.container3
-{
-  padding: 50px;
-  font-size: 40px;
-  font-weight: 700;
-  text-align: center;
+
+#logo{
+    height:55px;
+    object-fit:contain;
 }
-.container4
-{
-  margin-left: 5%;
-  display: flex;
-  width: 90%;
-  height: 450px;
-  border: 2px solid black;
-  justify-content: space-between;
-  font-size: 40px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:25px;
 }
-.servicebox
-{
-  height: 100%;
-  width: 33%;
-  border: 2px solid black;
+
+.nav-links a{
+    text-decoration:none;
+    color:#222;
+    font-size:18px;
+    font-weight:600;
+    transition:.3s;
 }
-#box1
-{
-  background-image: url(images/Screenshot\ 2024-03-28\ 001827.png);
-  background-size: cover;
+
+.nav-links a:hover{
+    color:#3ca22c;
 }
-#box2
-{
-  background-image: url(images/Screenshot\ 2024-03-28\ 001842.png);
-  background-size: cover;
+
+#profile{
+    background:#3ca22c;
+    color:white !important;
+    padding:10px 20px;
+    border-radius:30px;
 }
-#box3
-{
-  background-image: url(images/Screenshot\ 2024-03-28\ 001856.png);
-  background-size: cover;
+
+#profile:hover{
+    background:#2c7a22;
 }
-.container5
-{
-  text-align: center;
+
+
+
+.content{
+    margin-top:80px;
 }
-.container6
-{
-  margin-top: 100px;
-  
-  font-size: 40px;
-  font-weight: 700;
-  text-align: center;
+
+
+.container2{
+    position:relative;
+    width:100%;
+    height:600px;
+    overflow:hidden;
 }
-#banner
-{
-  margin-top: 100px;
-  background-color: #719c6b;
-  height: 150px;
-  width: 100%;
-  font-weight: 700;
-  font-family: cursive;
-  text-align: center;
-  padding-top: 80px;
-  font-size: 40px;
+
+#laundary{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(60%);
 }
-.container7
-{
-  background-color: #022d1aeb;
-  text-align: right;
+
+.text-overlay{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
 }
+
+#order{
+    background:#3ca22c;
+    color:white;
+    font-size:60px;
+    padding:25px 90px;
+    border-radius:20px;
+}
+
+
+
+.container3,
+.container6{
+    text-align:center;
+    font-size:42px;
+    font-weight:bold;
+    color:#222;
+    margin-top:100px;
+    margin-bottom:30px;
+}
+
+
+
+.container4{
+    width:85%;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+
+    font-size:22px;
+    line-height:1.9;
+    text-align:center;
+    color:#333;
+}
+
+
+
+.container5{
+    text-align:center;
+    margin:50px 0;
+}
+
+.container5 img{
+    max-width:90%;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+}
+
+
+#banner{
+    margin-top:60px;
+
+    height:180px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #3ca22c,
+        #2c7a22
+    );
+
+    color:white;
+    font-size:38px;
+    font-weight:bold;
+    text-align:center;
+}
+
+
+
+.container7{
+    width:100%;
+    background:#022d1aeb;
+
+    display:flex;
+    justify-content:flex-end; /* move image to right */
+    align-items:flex-end;
+
+    padding:0;
+    margin-top:50px;
+}
+
+.container7 img{
+    width:auto;
+    max-width:100%;
+    display:block;
+}
+
+
+@media(max-width:900px){
+
+    .navbar{
+        padding:0 20px;
+    }
+
+    .nav-links{
+        gap:10px;
+    }
+
+    .nav-links a{
+        font-size:15px;
+    }
+
+    #order{
+        font-size:40px;
+        padding:20px 50px;
+    }
+
+    .container3,
+    .container6{
+        font-size:32px;
+    }
+
+    .container4{
+        width:95%;
+        font-size:18px;
+        padding:25px;
+    }
+
+    #banner{
+        font-size:26px;
+        padding:20px;
+    }
+}
+
 </style>
 </head>
 <body>
 
+  <!-- Navbar -->
   <div class="navbar">
-    <img src="images\logo.png" id="logo">
-    
-        <form action="/home" method="get"><a href="/home">Home</a></form>
-        <form action="/about" method="get"><a href="/about">About</a></form>
-        <form action="/service" method="get"><a href="/service">Services</a></form>
-        <form action="/contact" method="get"><a href="/contact">Contact</a></form>
 
-        <form action="/profile" method="get"><button id="profile"  >
-          profile
-        </button></form>
-        <form action="/ls" method="get"><button id="profile" >Login/Signup</button></form>
-     
-        
+    <img src="/images/logo.png" id="logo">
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/service">Services</a>
+        <a href="/contact">Contact</a>
+
+        <% if (islogin) { %>
+
+            <a href="/profile">Profile</a>
+            <a href="/order">Order</a>
+            <a href="/myorders">My Orders</a>
+
+            <% if(role === "admin"){ %>
+                <a href="/admin">Admin</a>
+            <% } %>
+
+            <a href="/logout" id="profile">Logout</a>
+
+        <% } else { %>
+
+            <a href="/login" id="profile">Login/Signup</a>
+
+        <% } %>
+
+    </div>
+
 </div>
-<div class="content">
 
-  
-  <div class="container2">
-  <img src="images/laundary.jpg" id="laundary">
-  <div class="text-overlay">
-    <button id="order" >About US</button>
-  </div>
-  </div>
-  
-<div class="container3">
-<p>About Us</p>
-  </div>
+  <!-- Hero Section -->
+  <div class="content">
 
-  <div class="container4">
-    We are WashHub, India's number 1 online laundry service- bringing you effective
-    and affordable laundry solutions, right at your doorstep. We deal in all types of cloth cleansing and sterilisation, 
-   and aim to expand further in near future.<br><br>
- WashHub was founded in 2024 by 4 students of IIIT- Allahabad, and has been growing steadily since then. Based in Delhi and Allahabad, we provide services to over 100 cities in India through our nationwide setup of chains.
-  </div>
+      <!-- About Info -->
+      <div class="container3">
+          <p>About Us</p>
+      </div>
 
-  <div id="banner">
-    INDIA'S NO. 1 LAUNDARY AND DRY-CLEANING SERVICE
-  </div>
+      <div class="container4">
+        We are WashHub, an online laundry service—bringing you effective
+        and affordable laundry solutions, right at your doorstep. We deal in all types of cloth cleansing and sterilization, 
+        and aim to expand further in the near future.<br><br>
+        WashHub was founded in 2024 by 4 students of IIIT-Allahabad, and has been growing steadily since then. 
+        Based in Delhi and Allahabad, we provide services to over 100 cities in India through our nationwide chain.
+      </div>
 
-  <div class="container6">
-    <p>Why WashHub</p>
-  </div>
-  <div class="container5">
-    <img src="images/whywashhub.png" >
-  </div>
+      <!-- Why WashHub -->
+      <div class="container6">
+          <p>Why WashHub</p>
+      </div>
+      <div class="container5">
+          <img src="/images/whywashhub.png">
+      </div>
 
-  <div class="container7">
-    <img src="images/Screenshot 2024-03-28 165716.png">
+      <div class="container7">
+          <img src="/images/Screenshot 2024-03-28 165716.png">
+      </div>
   </div>
-</div>
 
 </body>
 </html>

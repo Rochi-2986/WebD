@@ -1,60 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Order Confirmation</title>
     <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/css/font-awesome.css">
+
     <style>
         body {
             background: linear-gradient(to right, #505050, #ffffff);
-            color: white;
+            color: #222;
             font-family: 'Nobile', Helvetica, Arial, sans-serif;
             padding: 50px;
         }
-        
-        .cont{
+        .cont {
             background: linear-gradient(to right, #505050, #ffffff);
-           
             padding: 20px;
             text-align: center;
             border-radius: 5px;
         }
-        
         h1 {
             font-family: 'Corben', Georgia, Times, serif;
             color: white;
             margin: 0;
+            text-shadow: 1px 1px 1px #ccc;
         }
-        
         main {
             display: flex;
             flex-direction: column;
             align-items: center;
             padding: 20px;
         }
-        
-       .order-summary {
+        .order-summary {
             background-color: grey;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 1em 1em #ccc;
+            color: #fff;
         }
-        
-       .order-summary h2 {
+        .order-summary h2 {
             font-family: 'Corben', Georgia, Times, serif;
             margin-top: 0;
         }
-        
-        #order-number, #order-date, #order-total {
+        .order-summary p {
             font-size: 1.2em;
             margin-bottom: 10px;
         }
-        
-        #order-number span, #order-date span, #order-total span {
+        .order-summary span {
             font-weight: bold;
         }
-        
         #print-button {
             background-color: #006400;
             color: white;
@@ -63,201 +57,108 @@
             font-size: 1.2em;
             cursor: pointer;
             border-radius: 5px;
+            margin-top: 20px;
         }
-        
         #print-button:hover {
             background-color: #008000;
         }
-        
-        h1 {
-            text-shadow: 1px 1px 1px #ccc;
-        }
-        
-       .order-summary {
-            box-shadow: 0 0 1em 1em #ccc;
-        }
-        
-*{
-  padding: 0%;
-  margin: 0%;
-}
-.navbar{
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100px;
-  background-color: #ffffff;
-  display: flex;
-  align-items: center;
-  position: fixed;
-  margin-bottom: 10px;
-}
-#logo
-{
-  margin: 20px;
-  height: 60px;
-  margin-right: 400px;
-}
-a{
-  font-size: 30px;
-  margin: 20px;
-color: black;
-text-decoration: none;
-font-weight: 700;
-}
-a:hover{
-  color:#3ca22c;
-  text-decoration: underline;
-}
-#profile
-{
-  margin-left: 60px;
-  border: none;
-  border-radius: 20px; /* Adjust the value to increase or decrease the curve */
-  padding: 20px 90px; /* Adjust padding as needed */
-  background-color: #3ca22c; /* Green background */
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-}
-.content{
-  margin-top: 100px;
-}
-#laundary
-{
-  width: 100%;
-  height: 600px;
-  opacity: 0.7;
-}
-.container2 {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-}
 
-.text-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
-  text-align: center;
-  border-radius: 10px;
-}
-#order
-{
-  font-size: 60px;
-  border-radius: 20px;
-  padding: 20px 80px;
-  background-color:#3ca22c;
-  color: #ffffff;
-}
-.container3
-{
-  padding: 50px;
-  font-size: 40px;
-  font-weight: 700;
-  text-align: center;
-}
-.container4
-{
-  margin-left: 5%;
-  display: flex;
-  width: 90%;
-  height: 550px;
-  border: 2px solid black;
-  justify-content: space-between;
-}
-.servicebox
-{
-  height: 100%;
-  width: 33%;
-  border: 2px solid black;
-}
-#box1
-{
-  background-image: url(images/Screenshot\ 2024-03-28\ 001827.png);
-  background-size: cover;
-}
-#box2
-{
-  background-image: url(images/Screenshot\ 2024-03-28\ 001842.png);
-  background-size: cover;
-}
-#box3
-{
-  background-image: url(images/Screenshot\ 2024-03-28\ 001856.png);
-  background-size: cover;
-}
-.container5
-{
-  text-align: center;
-}
-.container6
-{
-  margin-top: 100px;
-  
-  font-size: 40px;
-  font-weight: 700;
-  text-align: center;
-}
-#banner
-{
-  margin-top: 100px;
-  background-color: #719c6b;
-  height: 150px;
-  width: 100%;
-  font-weight: 700;
-  font-family: cursive;
-  text-align: center;
-  padding-top: 80px;
-  font-size: 40px;
-}
-.container7
-{
-  background-color: #022d1aeb;
-  text-align: right;
-}
-
+        /* Navbar */
+        * { padding: 0; margin: 0; }
+        .navbar {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            margin-bottom: 10px;
+            z-index: 1000;
+        }
+        #logo {
+            margin: 20px;
+            height: 60px;
+            margin-right: 200px;
+        }
+        .navbar a {
+            font-size: 22px;
+            margin: 20px;
+            color: black;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .navbar a:hover {
+            color: #3ca22c;
+            text-decoration: underline;
+        }
+        .content {
+            margin-top: 120px;
+        }
     </style>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const printButton = document.getElementById("print-button");
-            printButton.addEventListener("click", function() {
-                window.print();
-            });
+            if (printButton) {
+                printButton.addEventListener("click", function() {
+                    window.print();
+                });
+            }
         });
     </script>
 </head>
 <body>
+    <!-- ✅ Navbar -->
     <div class="navbar">
-        <img src="images\logo.png" id="logo">
-        
-            <form action="/home" method="get"><a href="/home">Home</a></form>
-            <form action="/about" method="get"><a href="/about">About</a></form>
-            <form action="/service" method="get"><a href="/service">Services</a></form>
-            <form action="/contact" method="get"><a href="/contact">Contact</a></form>
-    
-            <form action="/profile" method="get"><button id="profile"  >Profile</button></form>
-            <form action="/ls" method="get"><button id="profile" >Login/Signup</button></form>
-         
-            
+        <img src="/images/logo.png" id="logo">
+        <a href="/home">Home</a>
+        <a href="/about">About</a>
+        <a href="/service">Services</a>
+        <a href="/contact">Contact</a>
+        <a href="/order">Order</a>
+        <% if (islogin) { %>
+            <a href="/profile">Profile</a>
+            <a href="/logout">Logout</a>
+        <% } else { %>
+            <a href="/login">Login</a>
+            <a href="/signup">Signup</a>
+        <% } %>
     </div>
+
+    <!-- ✅ Confirmation Content -->
     <div class="content">
-    <div class="cont">
-        <h1>Order Confirmation</h1>
+        <div class="cont">
+            <h1>Order Confirmation</h1>
+        </div>
+
+        <main>
+            <section class="order-summary">
+                <h2>Order Summary</h2>
+                <p id="order-number">Order Number: <span><%= order._id %></span></p>
+                <p id="order-date">Pickup Date: <span><%= order.date %></span></p>
+                <p id="order-total">Total: <span>₹<%= order.price %></span></p>
+
+                <h3>Items</h3>
+                <ul>
+                    <li>Shirts: <%= order.shirts %></li>
+                    <li>Pants: <%= order.pants %></li>
+                    <li>Suits: <%= order.suits %></li>
+                    <li>Sarees: <%= order.sarees %></li>
+                    <li>Jackets: <%= order.jackets %></li>
+                    <li>Others: <%= order.others %></li>
+                    <li>Socks: <%= order.socks %></li>
+                </ul>
+
+                <h3>Addresses</h3>
+                <p>Pickup: <%= order.pickup_address %></p>
+                <p>Drop: <%= order.drop_address %></p>
+                <p>Time: <%= order.time %></p>
+            </section>
+
+            <button id="print-button"><i class="icon-truck"></i> Print Receipt</button>
+        </main>
     </div>
-    <main>
-        <section class="order-summary">
-            <h2>Order Summary</h2>
-            <p id="order-number">Order Number: <span>12345</span></p>
-            <p id="order-date">Date:28-04-2024 <span><%=date%></span></p>
-            <p id="order-total">Total:100 <span>$<%=price%></span></p>
-        </section>
-        <button id="print-button"><i class="icon-truck"></i> Print Receipt</button>
-    </main></div>
 </body>
 </html>

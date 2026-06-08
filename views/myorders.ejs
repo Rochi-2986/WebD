@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Orders</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            background:#f4f4f4;
+            padding:30px;
+        }
+
+        h1{
+            text-align:center;
+            color:#2c7a22;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            background:white;
+        }
+
+        th,td{
+            border:1px solid #ddd;
+            padding:10px;
+            text-align:center;
+        }
+
+        th{
+            background:#3ca22c;
+            color:white;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<h1>My Orders</h1>
+
+<table>
+
+<tr>
+<th>Date</th>
+<th>Price</th>
+<th>Status</th>
+</tr>
+
+<% orders.forEach(order=>{ %>
+
+<tr>
+
+<td><%= order.date %></td>
+
+<td>₹<%= order.price %></td>
+
+<td><%= order.status %></td>
+
+</tr>
+
+<% }) %>
+
+</table>
+
+</body>
+</html>

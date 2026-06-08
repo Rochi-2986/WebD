@@ -30,6 +30,19 @@
         align-items: center;
         color: #fff;
     }
+    #profile-btn
+{
+  margin-left: 20px;
+  border-radius: 20px;
+  padding: 20px 90px;
+  background-color: #3ca22c;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
     .profile img {
         width: 40px;
         height: 40px;
@@ -38,16 +51,19 @@
     }
     .container {
         display: flex;
-        margin-top: 20px;
+        gap: 30px;
+        align-items: stretch;
+        
     }
-    .map {
-        width: 70%;
-        height: 800px;
-        border: 2px solid #4CAF50;
-        border-radius: 10px;
-    }
+.map{
+    width: 65%;
+    height: 650px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
     .form {
-        width: 30%;
+        width: 32%;
         padding: 20px;
         background-color: #fff;
         border-radius: 10px;
@@ -58,9 +74,15 @@
         color: #000000;
         margin-bottom: 20px;
     }
-    .form input[type="text"],
-    .form input[type="time"],
-    .form input[type="date"],
+    .form input{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
     .form select {
         width: calc(100% - 20px);
         margin-bottom: 10px;
@@ -89,28 +111,32 @@
   margin: 0%;
 }
 .navbar{
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100px;
-  background-color: #ffffff;
-  display: flex;
-  align-items: center;
-  position: fixed;
-  margin-bottom: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
 }
 #logo
 {
-  margin: 20px;
+  margin: 0;
   height: 60px;
-  margin-right: 400px;
+  
 }
 a{
-  font-size: 30px;
-  margin: 20px;
-color: black;
-text-decoration: none;
-font-weight: 700;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 15px;
+    transition: 0.3s;
 }
 a:hover{
   color:#3ca22c;
@@ -131,7 +157,8 @@ a:hover{
   cursor: pointer;
 }
 .content{
-  margin-top: 100px;
+  margin-top: 120px;
+  padding: 30px;
 }
 #laundary
 {
@@ -233,16 +260,16 @@ a:hover{
 </head>
 <body>
     <div class="navbar">
-        <img src="images\logo.png" id="logo">
+        <img src="/images/logo.png" id="logo">
         
-            <form action="/home" method="get"><a href="/home">Home</a></form>
-            <form action="/about" method="get"><a href="/about">About</a></form>
-            <form action="/service" method="get"><a href="/service">Services</a></form>
-            <form action="/contact" method="get"><a href="/contact">Contact</a></form>
+            <a href="/home">Home</a>
+            <a href="/about">About</a>
+            <a href="/service">Services</a>
+            <a href="/contact">Contact</a>
     
-            <form action="/profile" method="get"><button id="profile"  >Profile</button></form>
-            <form action="/ls" method="get"><button id="profile" >Login/Signup</button></form>
-         
+            <a href="/profile" id="profile">Profile</a>
+            <a href="/login" id="profile-btn">Login/Signup</a>
+            
             
     </div>
     <div class="content">
@@ -251,17 +278,17 @@ a:hover{
         <div class="form">
             <h2>Address</h2>
             <form action="/address" method="post">
-              <input type="text" placeholder="Email" name="email" value="<%=email%>">
-                 
-              <input type="text" placeholder="Pickup Address" name="paddress">
-                <input type="text" placeholder="Drop Address" name="daddress">
-                <input type="time" name="time" >
-                <input type="date" name="date">
-                <input type="hidden" id="price" value="<%=price%>">
+
+              <input type="hidden" name="data" value='<%- JSON.stringify(data) %>'>
+              <input type="hidden" name="price" value="<%= price %>">
+              <input type="text" placeholder="Pickup Address" name="paddress" required>
+                <input type="text" placeholder="Drop Address" name="daddress" required>
+                <input type="time" name="time" required>
+                <input type="date" name="date" required>
                 <button type="submit">Book Now</button>
               </form>
             <br><br> 
-            <h2>PAYMENT: <%=price%></h2>
+            <h2>PAYMENT: <%= price || 0 %></h2>
            
          
         </div>

@@ -1,48 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Logout Page</title>
-	<style>.container {
-    width: 300px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-top: 100px;
-  }
-  
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-  
-  button {
-    background-color: #f00;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #d00;
-  }</style>
+    <title>Profile</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f4f4;
+            margin:0;
+            padding:0;
+        }
+
+        .container{
+            width:500px;
+            margin:100px auto;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+            text-align:center;
+        }
+
+        h1{
+            color:#333;
+        }
+
+        p{
+            font-size:18px;
+        }
+
+        .btn{
+            display:inline-block;
+            margin-top:20px;
+            padding:10px 20px;
+            text-decoration:none;
+            border-radius:5px;
+            color:white;
+        }
+
+        .order{
+            background:#28a745;
+        }
+
+        .logout{
+            background:#dc3545;
+        }
+    </style>
 </head>
+
 <body>
-  <form action="/logout" method="get">
-	<div class="container">
-		<h1>Logout</h1>
-		<p>You are about to log out. Are you sure you want to continue?</p>
-		<button id="logout-button">Logout</button>
-	</div>
+
+<div class="container">
+    <h1>Welcome <%= name %></h1>
+
+    <p>You are successfully logged in.</p>
+
+    <a href="/order" class="btn order">Place Order</a>
+
+<a href="/orderhistory" class="btn order">
+    Order History
+</a>
+
+<form action="/logout" method="POST">
+    <button class="btn logout">
+        Logout
+    </button>
 </form>
+</div>
 
 </body>
 </html>

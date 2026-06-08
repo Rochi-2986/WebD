@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Logout Page</title>
+	<style>.container {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 100px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    background-color: #f00;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #d00;
+  }</style>
+</head>
+<body>
+  <form action="/logout" method="post">
+	<div class="container">
+		<h1>Logout</h1>
+		<p>You are about to log out. Are you sure you want to continue?</p>
+		<button id="logout-button">Logout</button>
+	</div>
+</form>
+
+</body>
+</html>

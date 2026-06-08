@@ -3,16 +3,19 @@
   <head>
     <title>Contact Us</title>
     <style>
-        body {
+body {
   font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  padding: 30px 0;
 }
 
 .container {
-  width: 600px;
-  margin: 0 auto;
+  max-width: 600px;
+  width: 90%;
+  margin: 30px auto;
   padding: 20px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #f9f9f9;
 }
 
@@ -31,15 +34,22 @@ label, input, textarea {
 }
 
 input {
-  height: 30px;
+  height: 40px;
+  padding: 5px 10px;
+  box-sizing: border-box;
 }
 
 textarea {
-  height: 100px;
+  height: 120px;
+  padding: 10px;
+  box-sizing: border-box;
+  resize: vertical;
 }
 
 button {
   background-color: #4CAF50;
+  width: 100%;
+  font-size: 16px;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -82,7 +92,7 @@ button:hover {
         <input type="email" id="email" name="email" required >
         <br>
         <label for="message">Message:</label>
-        <input type="text" id="message" name="message" required>
+        <textarea id="message" name="message" required></textarea>
         <br >
         <button type="submit">Submit</button>
       </form>

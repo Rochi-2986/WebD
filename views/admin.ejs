@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            padding:30px;
+            background:#f4f4f4;
+        }
+
+        h1{
+            text-align:center;
+            color:#2c7a22;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            background:white;
+        }
+
+        th,td{
+            border:1px solid #ddd;
+            padding:10px;
+            text-align:center;
+        }
+
+        th{
+            background:#3ca22c;
+            color:white;
+        }
+
+        select{
+            padding:5px;
+        }
+
+        button{
+            padding:5px 10px;
+            background:#3ca22c;
+            color:white;
+            border:none;
+        }
+        .logout-btn{
+    position:absolute;
+    top:30px;
+    right:40px;
+
+    background:#3ca22c;
+    color:white;
+    text-decoration:none;
+
+    padding:12px 25px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+.logout-btn:hover{
+    background:#2c7a22;
+}
+
+    </style>
+
+</head>
+<body>
+
+<h1>Admin Dashboard</h1>
+<a href="/logout" class="logout-btn">
+    Logout
+</a>
+<table>
+
+<tr>
+<th>User</th>
+<th>Date</th>
+<th>Price</th>
+<th>Status</th>
+<th>Update</th>
+</tr>
+
+<% orders.forEach(order=>{ %>
+
+<tr>
+
+<td><%= order.username %></td>
+
+<td><%= order.date %></td>
+
+<td>₹<%= order.price %></td>
+
+<td><%= order.status %></td>
+
+<td>
+
+<form action="/admin/status/<%= order._id %>" method="POST">
+
+<select name="status">
+
+<option>Pending</option>
+<option>Washing</option>
+<option>Ready</option>
+<option>Delivered</option>
+
+</select>
+
+<button type="submit">
+Save
+</button>
+
+</form>
+
+</td>
+
+</tr>
+
+<% }) %>
+
+</table>
+
+</body>
+</html>

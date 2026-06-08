@@ -136,7 +136,7 @@
 						<label for="email"> 
 							Email: 
 						</label> 
-						<input type="text" id="email"
+						<input type="email" id="email"
 							placeholder="Enter email address" name="email"
 							required> 
 					</div> 
@@ -174,7 +174,7 @@
 							<label for="zip"> 
 								Zip Code: 
 							</label> 
-							<input type="number" id="zip"
+							<input type="text" id="zip"
 								placeholder="123 456" name="zip"
 								required> 
 						</div> 
@@ -222,7 +222,7 @@
 
 					<div class="inputBox"> 
 						<label for="">Exp Month:</label> 
-						<select name="" id=""> 
+						<select name="expMonth" required>
 							<option value="">Choose month</option> 
 							<option value="January">January</option> 
 							<option value="February">February</option> 
@@ -243,7 +243,7 @@
 					<div class="flex"> 
 						<div class="inputBox"> 
 							<label for="">Exp Year:</label> 
-							<select name="" id=""> 
+							<select name="expYear" required>
 								<option value="">Choose Year</option> 
 								<option value="2023">2023</option> 
 								<option value="2024">2024</option> 
@@ -255,22 +255,30 @@
 
 						<div class="inputBox"> 
 							<label for="cvv">CVV</label> 
-							<input type="number" id="cvv"
-								placeholder="1234" required> 
+							<input
+    type="text"
+    id="cvv"
+    name="cvv"
+    maxlength="4"
+    pattern="[0-9]{3,4}"
+    placeholder="123"
+    required>
 						</div> 
 					</div> 
 
 				</div> 
 
 			</div> 
-			<input type="number" id="price" value="<%=price%>">
-			<input type="hidden" id="date" value="<%=date%>">
-			<div class="submit_btn"><button>Proceed To Checkout</button></div>
+<input type="hidden" name="date" value="<%= date %>">
+<input type="hidden" name="price" value="<%= price %>">
+			<button type="submit" class="submit_btn">
+    Proceed To Checkout
+</button>
 		
 		</form> 
 
 	</div> 
-	<script type="text/javascript" src="index.js"></script> 
+ 
 </body> 
 
 </html>

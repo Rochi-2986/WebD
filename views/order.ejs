@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Order</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f2f2f2; }
+        h1 { text-align: center; margin-bottom: 30px; }
+        form { max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 15px; background-color: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        label { font-weight: bold; }
+        input, textarea { padding: 10px; font-size: 16px; width: 100%; border: 1px solid #ccc; border-radius: 8px; }
+        button { padding: 15px; font-size: 18px; background-color: #3ca22c; color: white; border: none; border-radius: 10px; cursor: pointer; transition: 0.3s; }
+        button:hover { background-color: #2d7b1b; }
+        .message { text-align: center; margin-bottom: 20px; font-size: 18px; color: green; }
+        a.back { display: block; text-align: center; margin-top: 20px; font-size: 16px; color: #3ca22c; text-decoration: none; }
+        a.back:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <h1>Place Your Laundry Order</h1>
+
+<form action="/submit-order" method="POST">
+    <label>Shirts:</label><input type="number" name="shirt" value="0"><br>
+    <label>Pants:</label><input type="number" name="pants" value="0"><br>
+    <label>Suits:</label><input type="number" name="suit" value="0"><br>
+    <label>Sarees:</label><input type="number" name="saree" value="0"><br>
+    <label>Jackets:</label><input type="number" name="jacket" value="0"><br>
+    <label>Other:</label><input type="number" name="other" value="0"><br>
+    <label>Socks:</label><input type="number" name="socks" value="0"><br>
+    <label>Special Instructions:</label><textarea name="special_instructions"></textarea><br>
+    <button type="submit">Next: Address</button>
+</form>
+</body>
+</html>
+

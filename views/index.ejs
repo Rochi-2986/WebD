@@ -1,212 +1,325 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Bar</title>
-   <style>
-*{
-  padding: 0%;
-  margin: 0%;
-}
-.navbar{
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100px;
-  background-color: #ffffff;
-  display: flex;
-  align-items: center;
-  position: fixed;
-  margin-bottom: 10px;
-}
-#logo
-{
-  margin: 20px;
-  height: 60px;
-  margin-right: 400px;
-}
-a{
-  font-size: 30px;
-  margin: 20px;
-color: black;
-text-decoration: none;
-font-weight: 700;
-}
-a:hover{
-  color:#3ca22c;
-  text-decoration: underline;
-}
-#profile
-{
-  margin-left: 60px;
-  border: none;
-  border-radius: 20px; /* Adjust the value to increase or decrease the curve */
-  padding: 20px 90px; /* Adjust padding as needed */
-  background-color: #3ca22c; /* Green background */
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-}
-.content{
-  margin-top: 100px;
-}
-#laundary
-{
-  width: 100%;
-  height: 600px;
-  opacity: 0.7;
-}
-.container2 {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-}
+    <title>WashHub - Home</title>
 
-.text-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
-  text-align: center;
-  border-radius: 10px;
-}
-#order
-{
-  font-size: 60px;
-  border-radius: 20px;
-  padding: 20px 80px;
-  background-color:#3ca22c;
-  color: #ffffff;
-}
-.container3
-{
-  padding: 50px;
-  font-size: 40px;
-  font-weight: 700;
-  text-align: center;
-}
-.container4
-{
-  margin-left: 5%;
-  display: flex;
-  width: 90%;
-  height: 550px;
-  border: 2px solid black;
-  justify-content: space-between;
-}
-.servicebox
-{
-  height: 100%;
-  width: 33%;
-  border: 2px solid black;
-}
-#box1
-{
-  background-image: url(images/Screenshot\ 2024-03-28\ 001827.png);
-  background-size: cover;
-}
-#box2
-{
-  background-image: url(images/Screenshot\ 2024-03-28\ 001842.png);
-  background-size: cover;
-}
-#box3
-{
-  background-image: url(images/Screenshot\ 2024-03-28\ 001856.png);
-  background-size: cover;
-}
-.container5
-{
-  text-align: center;
-}
-.container6
-{
-  margin-top: 100px;
-  
-  font-size: 40px;
-  font-weight: 700;
-  text-align: center;
-}
-#banner
-{
-  margin-top: 100px;
-  background-color: #719c6b;
-  height: 150px;
-  width: 100%;
-  font-weight: 700;
-  font-family: cursive;
-  text-align: center;
-  padding-top: 80px;
-  font-size: 40px;
-}
-.container7
-{
-  background-color: #022d1aeb;
-  text-align: right;
-}
-</style>
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            overflow-x:hidden;
+            background:#f8f9fa;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar{
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:80px;
+            background:white;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:0 50px;
+            box-shadow:0 2px 10px rgba(0,0,0,0.1);
+            z-index:1000;
+        }
+
+        #logo{
+            height:55px;
+            object-fit:contain;
+        }
+
+        .nav-links{
+            display:flex;
+            align-items:center;
+            gap:25px;
+        }
+
+        .nav-links a{
+            text-decoration:none;
+            color:#222;
+            font-size:18px;
+            font-weight:600;
+            transition:0.3s;
+        }
+
+        .nav-links a:hover{
+            color:#3ca22c;
+        }
+
+        #profile{
+            background:#3ca22c;
+            color:white !important;
+            padding:10px 20px;
+            border-radius:30px;
+        }
+
+        #profile:hover{
+            background:#2c7a22;
+        }
+
+        /* ================= HERO SECTION ================= */
+
+        .hero{
+            min-height:100vh;
+
+            background:
+            linear-gradient(
+                rgba(0,0,0,0.55),
+                rgba(0,0,0,0.55)
+            ),
+            url('/images/laundary.jpg');
+
+            background-size:cover;
+            background-position:center;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+        }
+
+        .hero-content h1{
+            color:white;
+            font-size:clamp(40px,6vw,75px);
+            margin-bottom:20px;
+        }
+
+        .hero-content p{
+            color:#f5f5f5;
+            font-size:24px;
+            line-height:1.8;
+            margin-bottom:40px;
+        }
+
+        .hero-btn{
+            display:inline-block;
+            text-decoration:none;
+            background:#3ca22c;
+            color:white;
+            padding:18px 45px;
+            border-radius:50px;
+            font-size:22px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .hero-btn:hover{
+            background:#2c7a22;
+            transform:translateY(-3px);
+            color:white;
+        }
+
+        /* ================= SERVICES ================= */
+
+        .container3{
+            text-align:center;
+            padding:70px 20px 40px;
+            font-size:42px;
+            font-weight:bold;
+            color:#222;
+        }
+
+        .container4{
+            width:90%;
+            margin:auto;
+            display:flex;
+            justify-content:space-between;
+            gap:25px;
+            padding-bottom:80px;
+        }
+
+        .servicebox{
+            position:relative;
+            width:33%;
+            height:350px;
+            border-radius:15px;
+            overflow:hidden;
+            background-size:cover;
+            background-position:center;
+            box-shadow:0 5px 20px rgba(0,0,0,0.15);
+            transition:0.4s;
+        }
+
+        .servicebox:hover{
+            transform:translateY(-10px);
+            box-shadow:0 10px 25px rgba(0,0,0,0.25);
+        }
+
+        #box1{
+            background-image:url('/images/Screenshot_2024-03-28_001827.png');
+        }
+
+        #box2{
+            background-image:url('/images/Screenshot_2024-03-28_001842.png');
+        }
+
+        #box3{
+            background-image:url('/images/Screenshot_2024-03-28_001856.png');
+        }
+
+        .service-title{
+            position:absolute;
+            bottom:0;
+            width:100%;
+            padding:18px;
+            background:rgba(0,0,0,0.7);
+            color:white;
+            text-align:center;
+            font-size:22px;
+            font-weight:bold;
+        }
+
+        /* ================= BANNER ================= */
+
+        #banner{
+            margin-top:20px;
+            height:180px;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            background:
+            linear-gradient(
+                135deg,
+                #3ca22c,
+                #2c7a22
+            );
+
+            color:white;
+            font-size:38px;
+            font-weight:bold;
+            text-align:center;
+            padding:20px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width:900px){
+
+            .navbar{
+                padding:0 20px;
+            }
+
+            .nav-links{
+                gap:10px;
+            }
+
+            .nav-links a{
+                font-size:15px;
+            }
+
+            .container4{
+                flex-direction:column;
+                align-items:center;
+            }
+
+            .servicebox{
+                width:100%;
+                max-width:450px;
+            }
+
+            #banner{
+                font-size:26px;
+            }
+        }
+
+    </style>
 </head>
+
 <body>
 
-  <div class="navbar">
-    <img src="images\logo.png" id="logo">
-    
-        <form action="/home" method="get"><a href="/home">Home</a></form>
-        <form action="/about" method="get"><a href="/about">About</a></form>
-        <form action="/service" method="get"><a href="/service">Services</a></form>
-        <form action="/contact" method="get"><a href="/contact">Contact</a></form>
+    <!-- Navbar -->
 
-        <form action="/profile" method="get"><button id="profile"  >
-          <% if (islogin) { %>
-            <%= name %>
-          <% } else { %>
-            profile
-          <% } %>
-        </button></form>
-        <form action="/ls" method="get"><button id="profile" >Login/Signup</button></form>
-     
-        
-</div>
-<div class="content">
+    <div class="navbar">
 
-  
-  <div class="container2">
-  <img src="images/laundary.jpg" id="laundary">
-  <div class="text-overlay">
-   <form action="/service" method="get"> <button id="order" >Order Now</button></form>
-  </div>
-  </div>
-  
-<div class="container3">
-<p>OUR SERVICES</p>
-  </div>
+        <img src="/images/logo.png" id="logo">
 
-  <div class="container4">
-    <div class="servicebox" id="box1"></div>
-    <div class="servicebox" id="box2"></div>
-    <div class="servicebox" id="box3"></div>
-  </div>
+        <div class="nav-links">
 
-  <div id="banner">
-    INDIA'S NO. 1 LAUNDARY AND DRY-CLEANING SERVICE
-  </div>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/service">Services</a>
+            <a href="/contact">Contact</a>
 
-  <div class="container6">
-    <p>Why WashHub</p>
-  </div>
-  <div class="container5">
-    <img src="images/whywashhub.png" >
-  </div>
+            <% if (islogin) { %>
 
-  <div class="container7">
-    <img src="images/Screenshot 2024-03-28 165716.png">
-  </div>
-</div>
+<a href="/order">Order</a>
+
+<a href="/myorders">My Orders</a>
+
+<% if(role === "admin"){ %>
+<a href="/admin">Admin</a>
+<% } %>
+
+<a href="/profile" id="profile">
+    <%= name %>
+</a>
+
+<a href="/logout">
+    Logout
+</a>
+
+<% } else { %>
+
+<a href="/login" id="profile">
+    Login/Signup
+</a>
+
+<% } %>
+
+        </div>
+
+    </div>
+
+    <!-- Hero Section -->
+
+    <div class="hero">
+
+        <div class="hero-content">
+
+            <h1>Professional Laundry Service</h1>
+
+            <p>
+                Doorstep Pickup & Delivery <br>
+                Fast • Affordable • Reliable
+            </p>
+
+            <% if (islogin) { %>
+
+                <a href="/order" class="hero-btn">
+                    Order Now
+                </a>
+
+            <% } else { %>
+
+                <a href="/login" class="hero-btn">
+                    Login To Order
+                </a>
+
+            <% } %>
+
+        </div>
+
+    </div>
+
+
+    <!-- Banner -->
+
+    <div id="banner">
+         LAUNDRY & DRY CLEANING SERVICE
+    </div>
 
 </body>
 </html>
